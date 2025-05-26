@@ -14,6 +14,10 @@ dev = [
     "pre-commit>=4.2.0",
 ]
 
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
 exclude = [
