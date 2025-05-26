@@ -1,0 +1,2 @@
+ARG PYTHON_VERSION=3.11-bookworm
+FROM python:${PYTHON_VERSION}
