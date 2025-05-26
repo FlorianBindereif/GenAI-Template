@@ -33,3 +33,10 @@ repos:
     rev: v1.1.392
     hooks:
       - id: pyright
+
+  # ToDo Evalute for feasability
+  # - repo: https://github.com/compilerla/conventional-pre-commit
+  #   rev: v2.4.0
+  #   hooks:
+  #     - id: conventional-pre-commit
+  #       stages: [commit-msg]
