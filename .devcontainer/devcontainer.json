@@ -11,6 +11,9 @@
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
+  "containerEnv": {
+   "UV_LINK_MODE":"copy"
+  },
   "remoteUser": "genai_dev",
   "containerUser": "genai_dev",
   "onCreateCommand": "uv venv .venv",
