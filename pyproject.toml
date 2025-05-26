@@ -1,7 +1,10 @@
 [project]
-name = "genai-template-remote"
+name = "GenAI-POC-Template"
 version = "0.1.0"
-description = "Add your description here"
+description = "A standardized template for Generative AI applications, promoting best practices and consistency across projects."
+authors = [
+    { name = "Florian Bindereif" },
+]
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
