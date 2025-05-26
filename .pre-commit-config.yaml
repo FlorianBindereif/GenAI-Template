@@ -1,0 +1,23 @@
+exclude: ^.*/__init__.py$
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+        # exlude j2 and json and similar
+        exclude: ^.*\.j2$|.*\.json$|.*\.jsonl$|.*\.partial_json$|.*\.xml$|.*\.txt$
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-ast
+      - id: check-added-large-files
+        args: [ "--maxkb=5000" ]
+      - id: check-docstring-first
+      - id: detect-private-key
+
+# ToDO https://github.com/astral-sh/uv-pre-commit could potentially be used with default_install_took_types instead of pre-commit install in devcontainer.json
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.7.8
+    hooks:
+      - id: uv-lock
