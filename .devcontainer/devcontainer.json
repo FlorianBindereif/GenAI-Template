@@ -1,0 +1,17 @@
+{
+  "name": "Python GenAI Development Container",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "username": "genai_dev"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "remoteUser": "genai_dev",
+  "containerUser": "genai_dev",
+  "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/scripts/post_create.sh",
+}
