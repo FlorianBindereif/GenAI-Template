@@ -42,7 +42,7 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = ["D", "TD"]
+ignore = ["D", "TD"] # Disables ruff for to-do comments and docstrings
 
 fixable = ["ALL"]
 
