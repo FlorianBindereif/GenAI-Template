@@ -75,18 +75,19 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = ["S101", "PERF401", "ERA001", "COM812", "ISC001", "D213", "D211", "TD002", "TD003", "FIX002", "D401", "ANN101", "S105", "ANN002", "ANN003", "INP001", "S104", "S108", "FBT001", "FBT002", "PLW0603", "S106", "PLR2004", "B008", "RET505", "D203", "FAST002", "BLE001"]
+ignore = ["D", "TD"]
 
 fixable = ["ALL"]
-unfixable = []
 
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
 
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
-docstring-code-format = true
 docstring-code-line-length = 170
