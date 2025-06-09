@@ -34,7 +34,8 @@ venvPath = "."
 venv = ".venv"
 
 [tool.ruff]
-exclude = [] # Folders to be exluded by ruff.
+# Folders to be exluded by ruff.
+exclude = []
 
 line-length = 120
 unsafe-fixes = false
@@ -42,7 +43,8 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = ["D", "TD"] # Disables ruff for to-do comments and docstrings
+# Disables ruff for to-do comments and docstrings
+ignore = ["D", "TD"]
 
 fixable = ["ALL"]
 
