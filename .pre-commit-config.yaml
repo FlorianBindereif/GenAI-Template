@@ -1,4 +1,9 @@
 exclude: ^.*/__init__.py$
+
+default_install_hook_types:
+  - pre-commit
+  - commit-msg
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
@@ -16,7 +21,6 @@ repos:
       - id: check-docstring-first
       - id: detect-private-key
 
-# ToDO https://github.com/astral-sh/uv-pre-commit could potentially be used with default_install_took_types instead of pre-commit install in devcontainer.json
   - repo: https://github.com/astral-sh/uv-pre-commit
     rev: 0.7.8
     hooks:
@@ -39,9 +43,8 @@ repos:
     hooks:
       - id: deptry
 
-  # ToDo Evalute for feasability
-  # - repo: https://github.com/compilerla/conventional-pre-commit
-  #   rev: v2.4.0
-  #   hooks:
-  #     - id: conventional-pre-commit
-  #       stages: [commit-msg]
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
