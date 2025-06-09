@@ -36,7 +36,7 @@ venv = ".venv"
 [tool.ruff]
 exclude = [] # Folders to be exluded by ruff.
 
-line-length = 170
+line-length = 120
 unsafe-fixes = false
 target-version = "py311"
 
