@@ -34,6 +34,11 @@ repos:
     hooks:
       - id: pyright
 
+  - repo: https://github.com/fpgmaas/deptry.git
+    rev: 0.23.0
+    hooks:
+      - id: deptry
+
   # ToDo Evalute for feasability
   # - repo: https://github.com/compilerla/conventional-pre-commit
   #   rev: v2.4.0
