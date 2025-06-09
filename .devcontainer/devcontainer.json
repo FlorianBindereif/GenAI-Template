@@ -17,7 +17,6 @@
   },
   "remoteUser": "genai_dev",
   "containerUser": "genai_dev",
-  "onCreateCommand": "uv venv .venv",
   "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/scripts/post_create.sh",
-  "postStartCommand": "uv sync && ${containerWorkspaceFolder}/.venv/bin/pre-commit install"
+  "postStartCommand": "${containerWorkspaceFolder}/.devcontainer/scripts/post_start.sh"
 }
