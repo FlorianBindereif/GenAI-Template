@@ -1,0 +1,16 @@
+{#
+  metadata:
+    name: "Greeting Prompt"
+    description: "Generates a greeting in a specific tone."
+    version: "1.0"
+    default_inputs:
+      username: "world"
+      tone: "neutral"
+#}
+{% if tone == "friendly" -%}
+Hey {{ username }}! It's so great to see you. Hope you're having a wonderful day! 😄
+{%- elif tone == "angry" -%}
+What do you want, {{ username }}?! Don't waste my time. 😡
+{%- else -%}
+Hello, {{ username }}.
+{%- endif %}
