@@ -12,6 +12,13 @@ PROMPT_DIR: pathlib.Path = ROOT_DIR / "app" / "prompts"
 class Settings(BaseSettings):
     """Application settings."""
 
+    # --- APP Settings ---
+    APP_NAME: str = "Simple Greeting App"
+    APP_DESCRIPTION: str = "A simple API to generate personalized greetings."
+
+    # --- API Settings ---
+    API_PREFIX: str = "/api/v1"
+
     # --- Logging ---
     LOG_LEVEL: str = "INFO"
 
