@@ -9,7 +9,9 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi[standard]>=0.115.12",
+    "jinja2>=3.1.6",
     "loguru>=0.7.3",
+    "pydantic>=2.11.5",
     "pydantic-settings>=2.9.1",
     "python-dotenv>=1.1.0",
 ]
@@ -59,4 +61,4 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 ignore_notebooks = true
 
 [tool.deptry.per_rule_ignores]
-DEP002 = ["fastapi", "loguru", "pydantic-settings", "python-dotenv"]
+DEP002 = ["fastapi", "loguru", "pydantic-settings", "python-dotenv", "pydantic", "jinja2"]
