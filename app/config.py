@@ -1,5 +1,6 @@
 import pathlib
 
+from pydantic import HttpUrl
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # Project root directory
@@ -24,7 +25,7 @@ class Settings(BaseSettings):
 
     # --- AI Model Core Settings ---
     OPENAI_API_KEY: str | None = None
-    OPENAI_BASE_URL: str = "https://api.openai.com/v1"
+    OPENAI_BASE_URL: HttpUrl = HttpUrl("https://api.openai.com/v1")
 
     model_config = SettingsConfigDict(
         env_file=ROOT_DIR / ".env",
