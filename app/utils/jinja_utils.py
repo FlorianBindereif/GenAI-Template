@@ -9,6 +9,7 @@ def get_jinja_env() -> Environment:
     """
     return Environment(
         loader=FileSystemLoader(PROMPT_DIR),
+        autoescape=True,
         trim_blocks=True,
         lstrip_blocks=True,
     )
