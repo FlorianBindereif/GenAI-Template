@@ -17,7 +17,9 @@ router = APIRouter()
 )
 def generate_greeting(
     request: GreetingRequest,
-    service: GreetingsService = Depends(get_greetings_service),
+    # ruff flags a function call as an argument default - this however is the traditional FastApi way.
+    # in cases like these we can use the noqa argument to make the code check ignore it
+    service: GreetingsService = Depends(get_greetings_service), # noqa: B008
 ) -> GreetingResponse:
     """
     Generates a greeting based on the provided username and tone.
