@@ -29,8 +29,8 @@ def generate_greeting(
     try:
         greeting: str = service.generate_greeting(tone=request.tone, user_name=request.username)
         return GreetingResponse(greeting=greeting)
-    except FileNotFoundError:
+    except FileNotFoundError as err:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"The template '{service.template_name}' was not found.",
-        )
+        ) from err
