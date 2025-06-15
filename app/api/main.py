@@ -11,7 +11,7 @@ app.include_router(greetings.router, prefix=settings.API_PREFIX)
 
 
 @app.get("/", tags=["Root"])
-def read_root():
+def read_root() -> dict:
     """
     Root endpoint to confirm the API is running.
     Provides a simple welcome message.

@@ -6,7 +6,7 @@ from app.utils.jinja_utils import get_jinja_env
 
 
 class GreetingsService:
-    def __init__(self, jinja_env: Environment):
+    def __init__(self, jinja_env: Environment) -> None:
         self.jinja_env = jinja_env
         self.template_name = "greeting_template.j2"
 
