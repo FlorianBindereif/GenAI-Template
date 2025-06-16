@@ -1,3 +1,5 @@
+from typing import Annotated
+
 from fastapi import APIRouter, Depends, status
 from fastapi.exceptions import HTTPException
 
@@ -9,7 +11,6 @@ router = APIRouter()
 
 @router.post(
     "/greet",
-    response_model=GreetingResponse,
     status_code=status.HTTP_200_OK,
     summary="Generate a custom greeting",
     description="This endpoint generates a greeting with a specific tone for a given user.",
@@ -17,9 +18,9 @@ router = APIRouter()
 )
 def generate_greeting(
     request: GreetingRequest,
-    # ruff flags a function call as an argument default - this however is the traditional FastApi way.
-    # in cases like these we can use the noqa argument to make the code check ignore it
-    service: GreetingsService = Depends(get_greetings_service), # noqa: B008
+    # pyright flags Annotated as not assignable to type GreetingsService- this however is best-practice for FastApi.
+    # in cases like these we can use # ignore make pyright ignore this specific line
+    service: GreetingsService = Annotated[GreetingsService, Depends(get_greetings_service)],  # type: ignore[reportArgumentType]
 ) -> GreetingResponse:
     """
     Generates a greeting based on the provided username and tone.
