@@ -18,9 +18,7 @@ router = APIRouter()
 )
 def generate_greeting(
     request: GreetingRequest,
-    # pyright flags Annotated as not assignable to type GreetingsService- this however is best-practice for FastApi.
-    # in cases like these we can use # ignore make pyright ignore this specific line
-    service: GreetingsService = Annotated[GreetingsService, Depends(get_greetings_service)],  # type: ignore[reportArgumentType]
+    service: Annotated[GreetingsService, Depends(get_greetings_service)],
 ) -> GreetingResponse:
     """
     Generates a greeting based on the provided username and tone.
