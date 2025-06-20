@@ -27,7 +27,7 @@ dev = [
 
 [tool.pytest.ini_options]
 minversion = "8.0"
-addopts = "-ra -q"
+addopts = ["-ra -q", "--import-mode=importlib"]
 testpaths = [
     "tests",
 ]
