@@ -27,6 +27,9 @@ dev = [
 
 [tool.pytest.ini_options]
 minversion = "8.0"
+# "-ra" shows a summary for all tests except those that pass.
+# "-q" runs pytest in quiet mode, reducing verbosity.
+# "--import-mode=importlib" specifies how pytest finds test modules.
 addopts = ["-ra -q", "--import-mode=importlib"]
 testpaths = [
     "tests",
@@ -37,31 +40,50 @@ venvPath = "."
 venv = ".venv"
 
 [tool.ruff]
-# Folders to be exluded by ruff.
+# Specifies a list of files and directories to be excluded from linting and formatting.
 exclude = []
 
+# Sets the maximum line length
 line-length = 120
+# Disables potentially unsafe automatic code fixes.
 unsafe-fixes = false
-target-version = "py311"
+# Sets the target Python version for compatibility checks
+target-version = "py313"
 
 [tool.ruff.lint]
 select = ["ALL"]
-# Disables ruff for to-do comments and docstrings
+# "D" for pydocstyle rules (related to docstring formatting).
+# "TD" for rules checking for to-do comments (e.g., "TODO").
 ignore = ["D", "TD"]
 
+# Enables auto-fixing for all fixable linting violations.
 fixable = ["ALL"]
 
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*" = ["S101"]
+"tests/*" = [
+    "S101",    # assert: Ignores warnings about using `assert` statements, which are common in tests.
+    "ANN",     # type annotations: Ignores rules related to missing type annotations.
+    "D",       # pydocstyle: Disables docstring checks.
+    "INP001",  # implicit-namespace-package: Allows implicit namespace packages.
+    "DTZ",     # datetimez: Allows naive datetime objects (without timezone information).
+    "S105",    # hardcoded-password-string: Allows the use of hardcoded passwords, which might be used for mock data.
+    "PLR2004", # magic-value-comparison: Allows comparisons against constant "magic" values.
+    "SLF001",  # private-member-access: Allows accessing private members (e.g., `_private_method`) in tests.
+]
 
 [tool.ruff.lint.flake8-bugbear]
+# Extends the list of functions where mutable default arguments are allowed.
+# This is useful for FastAPI's dependency injection system, which uses this pattern.
 extend-immutable-calls = ["fastapi.Depends", "fastapi.params.Depends", "fastapi.Query", "fastapi.params.Query"]
 
 [tool.deptry]
+# Tells Deptry to not scan Jupyter notebooks for dependencies.
 ignore_notebooks = true
 
 [tool.deptry.per_rule_ignores]
+# Ignores "DEP002" (unused dependency) warnings for the specified packages.
+# These deps are specified but not directly used in the template state of the project. Feel free to adjust this later on.
 DEP002 = ["fastapi", "loguru", "pydantic-settings", "python-dotenv", "pydantic", "jinja2"]
