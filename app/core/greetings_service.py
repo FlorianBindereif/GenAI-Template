@@ -1,7 +1,7 @@
 from fastapi import Depends
 from jinja2 import Environment, Template
 
-from app.api.schemas.greetings import Tone
+from app.models.greetings import Tone
 from app.utils.jinja_utils import get_jinja_env
 
 

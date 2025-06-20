@@ -3,8 +3,8 @@ from unittest.mock import MagicMock
 import pytest
 from pytest_mock import MockerFixture
 
-from app.api.schemas.greetings import Tone
 from app.core.greetings_service import GreetingsService
+from app.models.greetings import Tone
 
 
 @pytest.fixture

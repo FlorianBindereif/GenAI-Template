@@ -3,8 +3,8 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, status
 from fastapi.exceptions import HTTPException
 
-from app.api.schemas.greetings import GreetingRequest, GreetingResponse
 from app.core.greetings_service import GreetingsService, get_greetings_service
+from app.models.greetings import GreetingRequest, GreetingResponse
 
 router = APIRouter()
 
