@@ -3,7 +3,7 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, status
 from fastapi.exceptions import HTTPException
 
-from app.core.greetings_service import GreetingsService, get_greetings_service
+from app.core.greetings_service import GreetingsService
 from app.models.greetings import GreetingRequest, GreetingResponse
 
 router = APIRouter()
@@ -18,7 +18,7 @@ router = APIRouter()
 )
 def generate_greeting(
     request: GreetingRequest,
-    service: Annotated[GreetingsService, Depends(get_greetings_service)],
+    service: Annotated[GreetingsService, Depends(GreetingsService)],
 ) -> GreetingResponse:
     """
     Generates a greeting based on the provided username and tone.
