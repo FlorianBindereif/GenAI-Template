@@ -2,8 +2,8 @@ import pytest
 from fastapi import status
 from fastapi.testclient import TestClient
 
-from app.api.schemas.greetings import Tone
 from app.config import settings
+from app.models.greetings import Tone
 
 
 @pytest.mark.parametrize(
