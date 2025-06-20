@@ -28,7 +28,7 @@ def test_settings_loading_from_env_file(tmp_path: Path, monkeypatch: pytest.Monk
     """
 
     # Arrange: Set custom environment dotfile
-    env_content = """OPENAI_API_KEY="test_api_key_from_dotenv"""
+    env_content = "OPENAI_API_KEY='test_api_key_from_dotenv'"
     env_file = tmp_path / ".env"
     env_file.write_text(env_content)
     monkeypatch.setitem(Settings.model_config, "env_file", env_file)
