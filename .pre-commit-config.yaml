@@ -33,11 +33,6 @@ repos:
         args: [--fix, --exit-non-zero-on-fix]
       - id: ruff-format
 
-  - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.402
-    hooks:
-      - id: pyright
-
   - repo: https://github.com/fpgmaas/deptry.git
     rev: 0.23.0
     hooks:
@@ -48,3 +43,8 @@ repos:
     hooks:
       - id: conventional-pre-commit
         stages: [commit-msg]
+
+  - repo: https://github.com/DetachHead/basedpyright-pre-commit-mirror
+    rev: v1.13.0
+    hooks:
+      - id: basedpyright
