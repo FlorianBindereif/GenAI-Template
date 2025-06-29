@@ -1,5 +1,5 @@
 {
-  "name": "Python GenAI Development Container",
+  "name": "{{ cookiecutter.project_name }} Development Container",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
