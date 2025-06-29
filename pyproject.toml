@@ -18,12 +18,23 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "deptry>=0.23.0",
     "jupyterlab>=4.4.3",
     "pre-commit>=4.2.0",
-    "pytest>=8.3.5",
+]
+lint = [
+    "deptry==0.23.0",
+    "ruff==0.12.1",
+]
+test = [
+    "pytest>=8.4.1",
     "pytest-mock>=3.14.1",
 ]
+typing = [
+    "basedpyright>=1.29.4",
+]
+
+[tool.uv]
+default-groups = "all"
 
 [tool.pytest.ini_options]
 minversion = "8.0"
