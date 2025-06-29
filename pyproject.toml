@@ -7,6 +7,12 @@ authors = [
 ]
 readme = "README.md"
 requires-python = "~=3.13"
+keywords = ["genai", "llm", "template"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 dependencies = [
     "fastapi[standard]>=0.115.12",
     "jinja2>=3.1.6",
