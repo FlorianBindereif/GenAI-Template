@@ -1,5 +1,3 @@
-exclude: ^.*/__init__.py$
-
 default_install_hook_types:
   - pre-commit
   - commit-msg
