@@ -47,7 +47,7 @@ minversion = "8.0"
 # "-ra" shows a summary for all tests except those that pass.
 # "-q" runs pytest in quiet mode, reducing verbosity.
 # "--import-mode=importlib" specifies how pytest finds test modules.
-addopts = ["-ra -q", "--import-mode=importlib"]
+addopts = ["-ra -q"]
 testpaths = [
     "tests",
 ]
