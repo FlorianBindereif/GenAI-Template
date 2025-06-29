@@ -69,9 +69,12 @@ target-version = "py313"
 
 [tool.ruff.lint]
 select = ["ALL"]
-# "D" for pydocstyle rules (related to docstring formatting).
-# "TD" for rules checking for to-do comments (e.g., "TODO").
-ignore = ["D", "TD"]
+
+ignore = [
+    "D", # "D" for pydocstyle rules (related to docstring formatting).
+    "TD", # "TD" for rules checking for to-do comments (e.g., "TODO").
+    "ANN401"  # Allow `typing.Any`, often needed for dynamic API responses.
+]
 
 # Enables auto-fixing for all fixable linting violations.
 fixable = ["ALL"]
