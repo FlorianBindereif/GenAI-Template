@@ -1,0 +1,7 @@
+# A list of packages to install in a temporary environment before rendering the template.
+_requirements:
+  - jinja2-slug
+
+# A list of Jinja2 extensions to load from the installed packages.
+_extensions:
+  - jinja2_slug.SlugExtension
