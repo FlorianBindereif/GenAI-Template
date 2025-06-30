@@ -1,9 +1,9 @@
 [project]
-name = "GenAI-POC-Template"
+name = "{{ cookiecutter.project_name }}"
 version = "0.1.0"
-description = "A standardized template for Generative AI applications, promoting best practices and consistency across projects."
+description = "{{ cookiecutter.project_description }}"
 authors = [
-    { name = "Florian Bindereif" },
+    { name = "{{ cookiecutter.author }}" },
 ]
 readme = "README.md"
 requires-python = "~=3.13"

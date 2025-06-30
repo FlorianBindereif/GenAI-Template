@@ -1,0 +1,6 @@
+{
+  "project_name": "Python GenAI Project",
+  "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
+  "project_description": "A standardized template for Generative AI applications, promoting best practices and consistency across projects.",
+  "author": "Your Name"
+}
