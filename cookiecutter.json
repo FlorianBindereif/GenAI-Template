@@ -1,6 +1,8 @@
 {
+  "_comment_project_info": " --- Project Metadata --- ",
   "project_name": "Python GenAI Project",
-  "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace('-', '_')|replace(' ', '_') }}",
   "project_description": "A standardized template for Generative AI applications, promoting best practices and consistency across projects.",
-  "author": "Your Name"
+  "author_name": "Your Name",
+  "author_email": "your.email@example.com"
 }
