@@ -33,6 +33,7 @@ lint = [
 ]
 test = [
     "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
     "pytest-mock>=3.14.1",
 ]
 typing = [
@@ -47,9 +48,31 @@ minversion = "8.0"
 # "-ra" shows a summary for all tests except those that pass.
 # "-q" runs pytest in quiet mode, reducing verbosity.
 # "--import-mode=importlib" specifies how pytest finds test modules.
-addopts = ["-ra -q"]
+addopts = [
+    "-ra -q",
+    "--cov"
+]
 testpaths = [
     "tests",
+]
+
+[tool.coverage.run]
+source = ["app"]
+omit = [
+    "app/*/__init__.py",
+]
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    # coverage ignores
+    "pragma: no cover",
+
+    # abstract methods:
+    "@(abc\\.)?abstractmethod",
+
+    # Python entry point block
+    "if __name__ == .__main__.:",
 ]
 
 [tool.basedpyright]
