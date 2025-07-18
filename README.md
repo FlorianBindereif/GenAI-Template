@@ -155,6 +155,48 @@ The pre-commit hooks will automatically run `ruff` to format and lint your code 
     uv run ruff check
     ```
 
+-----
+
+## 🏃 Running the Example Application
+
+This template includes a simple "Greeting" API to demonstrate its functionality.
+
+1.  **Activate the Virtual Environment**: The dev container automatically uses the project's virtual environment, so you don't need to activate it manually.
+
+2.  **Start the API Server**: Run the following command in the VS Code terminal:
+
+    ```bash
+    uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    ```
+
+3.  **Access the API**:
+
+      * The dev container forwards port `8000`, so you can access the API from your local browser.
+      * **Swagger UI (Interactive Docs)**: [http://localhost:8000/docs](https://www.google.com/search?q=http://localhost:8000/docs)
+      * **Root Endpoint**: [http://localhost:8000/](https://www.google.com/search?q=http://localhost:8000/)
+
+4.  **Send a Request**: Use `curl` or the Swagger UI to interact with the `/greet` endpoint.
+
+    ```bash
+    curl -X 'POST' \
+      'http://localhost:8000/api/v1/greet' \
+      -H 'accept: application/json' \
+      -H 'Content-Type: application/json' \
+      -d '{
+        "username": "developer",
+        "tone": "friendly"
+      }'
+    ```
+
+    You should receive a friendly greeting in response\! 🎉
+
+    ```json
+    {
+      "greeting": "Hey developer! It's so great to see you. Hope you're having a wonderful day! 😄"
+    }
+    ```
+-----
+
 ### Configuration
 
 Application settings are managed in `app/config.py` using **Pydantic's `BaseSettings`**. You can create a `.env` file in the project root to override default settings (e.g., for API keys). A `.gitignore` entry is already in place to prevent committing this file.
