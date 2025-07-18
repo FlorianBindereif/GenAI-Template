@@ -3,8 +3,6 @@
 A standardized template for bootstrapping Generative AI applications. 
 This template provides a solid foundation with a pre-configured development environment, modern tooling, and a logical project structure.
 
-\<br\>
-
 ## ✨ Features
 
 This template is packed with modern tools to ensure a smooth, efficient, and high-quality development experience.
